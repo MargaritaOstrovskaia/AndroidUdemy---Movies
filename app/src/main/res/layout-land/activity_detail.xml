@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBigPoster"
+        android:contentDescription="@string/big_poster"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:adjustViewBounds="true"/>
+
+    <ImageView
+        android:id="@+id/imageViewAddToFavourite"
+        android:contentDescription="@string/add_to_favourite"
+        android:layout_width="@dimen/land_size_of_star"
+        android:layout_height="@dimen/land_size_of_star"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBigPoster"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBigPoster"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_16"
+        app:srcCompat="@drawable/favourite_add_to"
+        android:onClick="onClickChangeFavourite"/>
+
+    <ScrollView
+        android:id="@+id/scrollViewInfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBigPoster"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <include
+            android:id="@+id/movieInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/movie_info"/>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

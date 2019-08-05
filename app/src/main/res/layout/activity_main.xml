@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+    <Switch
+        android:id="@+id/switchSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"/>
+
+    <TextView
+        android:id="@+id/textViewPopularity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/switchSort"
+        app:layout_constraintEnd_toStartOf="@+id/switchSort"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:text="@string/popularity"
+        android:textColor="@color/colorAccent"
+        android:onClick="onClickSetPopularity"/>
+
+    <TextView
+        android:id="@+id/textViewTopRated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/switchSort"
+        app:layout_constraintStart_toEndOf="@+id/switchSort"
+        android:layout_marginStart="@dimen/dp_8"
+        android:text="@string/top_rated"
+        android:textColor="@color/colorWhite"
+        android:onClick="onClickSetTopRated"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewPosters"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/switchSort"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dp_8"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarLoading"
+        android:layout_width="@dimen/dp_42"
+        android:layout_height="@dimen/dp_42"
+        app:layout_constraintTop_toBottomOf="@+id/switchSort"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+</android.support.constraint.ConstraintLayout>
